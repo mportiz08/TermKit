@@ -196,3 +196,15 @@ exports.spinner = function (id) {
   };
 };
 
+/**
+ * Widget: shellclear.
+ */
+exports.clear = function (id) {
+  
+  return {
+    type: 'clear',
+    id: id || null,
+    contents: '',
+  };
+};
+

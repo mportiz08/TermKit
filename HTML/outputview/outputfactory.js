@@ -452,4 +452,35 @@ widgets.spinner.prototype = $.extend(new ov.outputNode(), {
   
 });
 
+/**
+ * Widget: clear
+ */
+widgets.clear = function (properties) {
+  
+  // Initialize node.
+  ov.outputNode.call(this, properties);
+  
+  this.$contents = this.$element.find('.contents');
+  this.updateElement();
+};
+
+widgets.clear.prototype = $.extend(new ov.outputNode(), {
+  
+  // Return active markup for this widget.
+  $markup: function () {
+    var $clearheight = $(window).height();
+    console.log($clearheight);
+    var $outputNode = $('<div class="termkitOutputNode widgetClear"><div class="contents" style="height: ' + $clearheight + 'px;"></div></div>').data('controller', this);
+    var that = this;
+    return $outputNode;
+  },
+
+  // Update markup to match.
+  updateElement: function () {
+    this.$contents.html(this.properties.contents);
+    this.$element.data('controller', this);
+  },
+  
+});
+
 })(jQuery);

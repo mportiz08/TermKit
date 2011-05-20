@@ -469,7 +469,6 @@ widgets.clear.prototype = $.extend(new ov.outputNode(), {
   // Return active markup for this widget.
   $markup: function () {
     var $clearheight = $(window).height();
-    console.log($clearheight);
     var $outputNode = $('<div class="termkitOutputNode widgetClear"><div class="contents" style="height: ' + $clearheight + 'px;"></div></div>').data('controller', this);
     var that = this;
     return $outputNode;

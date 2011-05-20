@@ -285,9 +285,10 @@ function testAutocomplete(assert) {
   });
   
   auto.process(process.cwd(), [], [ 'c' ], 0, function (m) {
-    assert(m && m.length == 2 &&
+    assert(m && m.length == 3 &&
            m[0].label == 'cat' && m[0].type == 'command' &&
-           m[1].label == 'cd'  && m[1].type == 'command', "Autocomplete c command");
+           m[1].label == 'cd'  && m[1].type == 'command' &&
+           m[2].label == 'clear' && m[2].type == 'command', "Autocomplete c command");
   });
 
   auto.process(process.cwd(), [], [ 'cat', 'test.j' ], 1, function (m) {
